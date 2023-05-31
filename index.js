@@ -1,27 +1,11 @@
-const ldap = require('ldapjs');
 const yargs = require('yargs/yargs');
 const {hideBin} = require('yargs/helpers');
 const {Parser} = require('json2csv');
 const fs = require('fs');
-const keytar = require('keytar');
 
 const { compareGroups } = require('./core');
 
 async function main() {
-    const service = 'ActiveDirectoryService';
-    const account = 'ActiveDirectoryAccount'; // replace with the account for which you have stored the password
-    const password = await keytar.getPassword(service, account);
-
-    const client = ldap.createClient({
-        url: 'ldap://example.com' // Put your Active Directory URL here
-    });
-
-    client.bind(account, password, err => {
-        if (err) {
-            console.error('Error binding to LDAP:', err);
-        }
-    });
-
     const argv = yargs(hideBin(process.argv))
         .option('user1', {
             description: 'First username to query',
