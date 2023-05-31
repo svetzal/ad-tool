@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "ad-tool": "./index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha *_spec.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +17,9 @@
     "keytar": "^7.9.0",
     "ldapjs": "^3.0.2",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
   }
 }
