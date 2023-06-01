@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-const {AttributeExpression, FilterExpression, AndExpression, NotExpression} = require('./filter_expressions');
+const {AttributeExpression, AndExpression, NotExpression} = require('./filter_expressions');
 
 describe("FilterExpression", () => {
     it("Can generate a simple search for an account name", () => {
