@@ -5,15 +5,15 @@ This is a Node.js script that compares the Active Directory group memberships be
 ## Prerequisites
 
 - Node.js and npm
-- `ldapjs` npm package
-- `yargs` npm package
-- `json2csv` npm package
-- `keytar` npm package
+- `ldapjs` npm package for interacting with an ldap server
+- `yargs` npm package for parsing command line arguments
+- `json2csv` npm package for converting JSON to CSV
+- `keytar` npm package for retrieving credentials from the macOS Keychain
 
 You can install the necessary dependencies with:
 
 ```shell
-npm install ldapjs yargs json2csv keytar
+npm install
 ```
 
 ## Usage
