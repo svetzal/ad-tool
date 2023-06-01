@@ -1,6 +1,5 @@
 const keytar = require("keytar");
 const ldap = require("ldapjs");
-const { AttributeExpression } = require("./filter_expressions");
 const {filterForAccountName} = require("./expression_helpers");
 const base_dn = 'dc=example,dc=com';
 
