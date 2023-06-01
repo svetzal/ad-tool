@@ -28,7 +28,25 @@ Replace `USER1` and `USER2` with the usernames you want to compare. If you want 
 
 ## Credentials
 
-The script retrieves the Active Directory credentials from the macOS Keychain using the `keytar` package. The service and account used to store the password are specified in the script. You need to replace these with the correct values for your system and ensure that the password has been added to the Keychain.
+The script retrieves the Active Directory credentials from the macOS Keychain using the `keytar` package.
+
+The credentials are stored in the Keychain under the service name `ActiveDirectoryServic`.
+
+If you don't already have a password set for this service, set it with:
+
+```shell
+security add-generic-password -s ActiveDirectoryService -a $USERNAME -w
+```
+
+This will prompt you for your password and allow you enter and verify it privately.
+
+If you already have a password set, you must delete it first with:
+
+```shell
+security delete-generic-password -s ActiveDirectoryService -a $USERNAME
+```
+
+Then you can set the new password with the command above.
 
 ## Example
 

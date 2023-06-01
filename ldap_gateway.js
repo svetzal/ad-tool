@@ -5,7 +5,7 @@ const base_dn = 'dc=example,dc=com';
 
 async function getClient() {
     const service = 'ActiveDirectoryService';
-    const account = 'ActiveDirectoryAccount'; // replace with the account for which you have stored the password
+    const account = process.env.USERNAME;
     const password = await keytar.getPassword(service, account);
 
     let client = ldap.createClient({
